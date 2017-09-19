@@ -1,5 +1,23 @@
-   <script src="./app/mysql/connection.js"></script>
 
 
-  <div class="header well"><h1>management screen</h1></div>
 
+  <div class="header well well-sm"><h1>Management screen</h1></div>
+
+<div class="login">
+<div ng-form="login">
+<div>
+<label>User name</label>
+<div class="login">
+  Username : <input type="text" [(ngModel)]="username"/>
+  Password : <input type="text" [(ngModel)]="password"/>
+ <div *ngFor="let hero of value">
+ {{hero}}
+ </div>
+  <input type="button" value="Click Me" (click)="login()" />
+</div>
+</div>
+
+</div>
+
+</div>
+  <div class="footer well well-sm"><footer>&copy; 2017 Some copyright mes	sage</footer></div>

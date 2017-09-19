@@ -4,18 +4,17 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs';
 
-import { Book } from './login_model';
+import { Book } from './home';
 @Injectable()
 
-export class LoginService {
+export class HomeService {
    constructor(private http: Http) {
 
   }
  //https://crossorigin.me/
   
-   sample(loginvsd:any):Observable<Book[]> {
-    
-        return this.http.post('http://localhost:8000/messages',{uid:loginvsd.username,pwd:loginvsd.password})
+   sample():Observable<Book[]> {
+        return this.http.get('http://localhost:8000/users')
             .map(this.extractData)
             .catch(this.handleError);
     }
@@ -64,17 +63,7 @@ export class LoginService {
 //  return Promise.reject(error.message || error);
 //    }
 //  
-//   login(username: string, password: string) {
-//        return this.http.post('/api/authenticate', JSON.stringify({ username: username, password: password }))
-//            .map((response: Response) => {
-//                // login successful if there's a jwt token in the response
-//                let user = response.json();
-//                if (user && user.token) {
-//                    // store user details and jwt token in local storage to keep user logged in between page refreshes
-//                    localStorage.setItem('currentUser', JSON.stringify(user));
-//                }
-//            });
-//    }
+  
 //  sample(as:any){
 //     var url = "http://localhost:8000/users";
 //    const headers: Headers = new Headers();

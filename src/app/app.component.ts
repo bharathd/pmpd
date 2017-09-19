@@ -3,7 +3,9 @@ import {Component,Input} from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: ` <router-outlet></router-outlet>`
+  template: `<main>
+  <router-outlet></router-outlet>
+</main>`
  
 })
 export class AppComponent {name = 'Angular';}

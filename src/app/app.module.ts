@@ -5,11 +5,12 @@ import { HttpModule } from '@angular/http';
 import { AppComponent }  from './app.component';
 import { LoginComponent }  from './login/login.component';
 import { HomeModule } from './home/home.module';
+import { ProjectModule } from './project/project.module';
 import { routing } from './ app.routes';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule , HttpModule, routing,HomeModule ],
+  imports:      [ BrowserModule, FormsModule , HttpModule, routing,HomeModule,ProjectModule ],
   declarations: [ AppComponent, LoginComponent ],
   bootstrap:    [ AppComponent ],
  

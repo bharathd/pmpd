@@ -5,7 +5,8 @@ import {Component,Input} from '@angular/core';
   selector: 'my-app',
   template: `<main>
   <router-outlet></router-outlet>
-</main>`
+</main>
+   `
  
 })
 export class AppComponent {name = 'Angular';}

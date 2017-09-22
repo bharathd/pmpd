@@ -1,18 +1,31 @@
-import { Component,Input, Output, EventEmitter } from '@angular/core';
+import { Component ,Input, Output, EventEmitter } from '@angular/core';
 import {Observable,Subscription} from 'rxjs/Rx';
 import { LoginService } from './login.service';
-import { Routes ,Router,ActivatedRoute} from '@angular/router';
+import { Routes ,Router,ActivatedRoute,CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  CanActivateChild,
+  NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'login-page',
   templateUrl: `./login.html`,
    providers: [LoginService]
 })
+
 export class LoginComponent  { 
   
   constructor(
         private loginService: LoginService,private router: Router,
         ){
+     let sessionId = 123456789;
+
+    // Set our navigation extras object
+    // that contains our global query params and fragment
+    let navigationExtras: NavigationExtras = {
+      queryParams: { 'session_id': sessionId },
+      fragment: 'anchor'
+    };
      this.router = router;
   }
   public model: any = {};
@@ -22,6 +35,7 @@ export class LoginComponent  {
  password: string;
  value: any;
   user:any;
+  
 
   login(){
 
@@ -34,8 +48,10 @@ export class LoginComponent  {
       this.loginService.sample(this.model).subscribe((response) => { // <---
         this.value = response;
         debugger;
+        console.log(this.value);
+       this.username=this.value[0].username;
         if(response.length>0)
-        this.router.navigate(['home']);
+        this.router.navigate(['home',{cell:this.value[0].USER_NAME}]);
         else
           this.loading=true;
     }, (err) => { // <---

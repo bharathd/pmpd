@@ -13,8 +13,14 @@ export class HomeService {
   }
  //https://crossorigin.me/
   
-   sample():Observable<Book[]> {
-        return this.http.get('http://localhost:8000/users')
+    sample(loginvsd:any):Observable<Book[]> {
+    
+        return this.http.post('http://localhost:8000/messages',{uid:loginvsd.username,pwd:loginvsd.password})
+            .map(this.extractData)
+            .catch(this.handleError);
+    }
+  getProjectList(data:any) {
+        return this.http.post('http://localhost:8000/getprojectlist',{uid:data})
             .map(this.extractData)
             .catch(this.handleError);
     }

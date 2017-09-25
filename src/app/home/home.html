@@ -16,7 +16,7 @@
       <ul class="nav navbar-nav">
        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a> 
+          <a [routerLink]="['/home/project']" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a> 
           <ul class="dropdown-menu">
             <!-- <li class="kopie"><a href="#">Dropdown</a></li> -->
             
@@ -61,9 +61,6 @@
     </nav>
   <div class="inner-outlet">
       <router-outlet></router-outlet>
-    </div>
-    <div>
-    <span>In this dashboard PM can view the different lisr</span>
     </div>
 
   <div class="footer well well-sm"><footer>&copy; 2017 Some copyright message</footer></div>  

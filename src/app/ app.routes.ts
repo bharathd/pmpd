@@ -10,7 +10,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
    { path: 'home' , component: HomeComponent,
      children: [
-        { path: '', component: HomeComponent },
+        { path: 'project', component: ProjectComponent },
         { path: 'project/:id', component: ProjectComponent },
     ] }
 ];

@@ -47,7 +47,7 @@ export class LoginComponent  {
     
       this.loginService.sample(this.model).subscribe((response) => { // <---
         this.value = response;
-        debugger;
+    
         console.log(this.value);
        this.username=this.value[0].username;
         if(response.length>0)

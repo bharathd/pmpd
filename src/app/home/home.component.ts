@@ -14,12 +14,13 @@ export class HomeComponent  {
 this.username=_routeParams.snapshot.url[0].parameters;
   
   this.getprojects();
+    this.getTechnologyList();
   }
  
 username:any;
  Userid: any;
   projectlist: any;
-
+technologylist:any;
   getprojects() {
     this.Userid = 1;
         this.homeService.getProjectList(this.Userid).subscribe((response:any) => { // <---
@@ -31,5 +32,15 @@ username:any;
   );
 
 
+  }
+  getTechnologyList(){
+    this.Userid = 1;
+        this.homeService.getTechnologyList().subscribe((response:any) => { // <---
+        this.technologylist = response;
+        
+    }, (err:any) => { // <---
+        console.log(err);
+    }
+  );
   }
  }

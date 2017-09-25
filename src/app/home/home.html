@@ -48,11 +48,17 @@
 	          </ul>
 	        </li>
       
-      <li>
-        <a routerLink="/" routerLinkActive="active">Interview Questions</a>
-        </li>
+        <li class="dropdown">
+	          <a  [routerLink]="['/home/techno']" class="dropdown-toggle" data-toggle="dropdown">Technologies <b class="caret"></b></a>
+	          <ul class="dropdown-menu">
+	            <!-- <li class="kopie"><a href="#">List of Employess</a></li> -->
+	      <li *ngFor="let tl of technologylist">
+	      <a href="#">{{tl.TECHNOLOGY_NAME}}</a></li>
+	           
+	          </ul>
+	        </li>
         <li>
-        <a><span style="margin-left: 320px;">Welcome, {{username.cell}}</span></a>
+        <a><span style="margin-left: 300px;">Welcome, {{username.cell}}</span></a>
         </li>
       
       </ul>

@@ -17,6 +17,11 @@ export class TechnologyService {
             .map(this.extractData)
             .catch(this.handleError);
     }
+  getTechnoQAList(data:any){
+   return this.http.post('http://localhost:8000/gettechnoloyQA',{qid:data})
+            .map(this.extractData)
+            .catch(this.handleError);
+  }
 
     private extractData(res:Response) {
         let body = res.json();

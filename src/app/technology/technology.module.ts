@@ -5,10 +5,10 @@ import { HttpModule } from '@angular/http';
 import { TechnologyComponent }  from './technology.component';
 import { ProjectRouting } from './technology.routing';
 import { Routes, RouterModule } from '@angular/router';
-import { DataTableModule } from 'angular2-datatable';
+import {AccordionModule} from 'ng2-accordion';
 
 @NgModule({
-  imports:      [ BrowserModule, ProjectRouting,FormsModule , HttpModule,DataTableModule],
+  imports:      [ AccordionModule,BrowserModule, ProjectRouting,FormsModule , HttpModule],
   declarations: [ TechnologyComponent ],
   bootstrap:    [ TechnologyComponent ],
  

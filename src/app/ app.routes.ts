@@ -16,6 +16,7 @@ const appRoutes: Routes = [
         { path: 'project', component: ProjectComponent },
         { path: 'techno', component: TechnologyComponent },
         { path: 'project/:id', component: ProjectComponent },
+        { path: 'techno/:id', component: TechnologyComponent },
     ] }
 ];
 

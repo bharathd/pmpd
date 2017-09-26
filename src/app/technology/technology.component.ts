@@ -11,36 +11,51 @@ import {  Routes , Router, ActivatedRoute } from '@angular/router';
 })
 export class TechnologyComponent  { 
     id: any;
-  projectinfo:any;
-  projectinfo1:any;
+  technoinfo: any;
+  technoinfo1:any;
   public data:any;
+  technoqa:any
   technologylist:any;
-  constructor(private _routeParams:  ActivatedRoute,private homeService: HomeService,private projectservice: TechnologyService,private router: Router
+  constructor(private _routeParams:  ActivatedRoute,private homeService: HomeService,private technologyservice: TechnologyService,private router: Router
         ) {
   }
  ngOnInit() {
-       this.projectinfo=this._routeParams.url;
+       this.technoinfo=this._routeParams.url;
          // this.getprojects();
    this.getTechnologyList();
-   this.projectinfo1=true;
-    this.projectinfo = this._routeParams.params.subscribe(params => {
-      debugger;
+   this.technoinfo1=true;
+    this.technoinfo = this._routeParams.params.subscribe(params => {
+  
        this.id = +params['id']; // (+) converts string 'id' to a number
-this.projectinfo1=this.id;
+this.technoinfo1=this.id;
+      
       if(!this.id){
-      this.projectinfo1=false;
+      this.technoinfo1=false;
+       
       }
-     
+           this.getTechnoQAList()
     });
+   
   }
 
   getTechnologyList(){
         this.homeService.getTechnologyList().subscribe((response:any) => { // <---
         this.technologylist = response;
-        debugger;
+        
     }, (err:any) => { // <---
         console.log(err);
     }
   );
+  }
+  getTechnoQAList() {
+        this.technologyservice.getTechnoQAList(this.technoinfo1).subscribe((response:any) => { // <---
+        this.technoqa = response;
+        
+    }, (err:any) => { // <---
+        console.log(err);
+    }
+  );
+
+
   }
  }

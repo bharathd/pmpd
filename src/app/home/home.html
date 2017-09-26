@@ -53,7 +53,7 @@
 	          <ul class="dropdown-menu">
 	            <!-- <li class="kopie"><a href="#">List of Employess</a></li> -->
 	      <li *ngFor="let tl of technologylist">
-	      <a href="#">{{tl.TECHNOLOGY_NAME}}</a></li>
+	      <a  [routerLink]="['/home/techno/', tl.TECHNOLOGY_ID ]">{{tl.TECHNOLOGY_NAME}}</a></li>
 	           
 	          </ul>
 	        </li>

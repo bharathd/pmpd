@@ -5,7 +5,7 @@ import { LoginComponent } from './login/login.component';
 import {HomeComponent } from './home/home.component';
 import {ProjectComponent } from './project/project.component';
 import { TechnologyComponent }  from './technology/technology.component';
-
+import { EmployeeComponent }  from './employee/employee.component';
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
@@ -17,6 +17,7 @@ const appRoutes: Routes = [
         { path: 'techno', component: TechnologyComponent },
         { path: 'project/:id', component: ProjectComponent },
         { path: 'techno/:id', component: TechnologyComponent },
+        { path: 'employee', component: EmployeeComponent },
     ] }
 ];
 

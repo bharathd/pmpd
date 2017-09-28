@@ -2,23 +2,23 @@
       <div class="navbar-header header">
         <a routerLink="/home" class="navbar-brand">Management screen</a>
       </div>
-  
-     
-      
+
+
+
       <!--  <ul class="nav navbar-nav">
         <li>
         <a routerLink="/project" routerLinkActive="active">Home</a>
         </li>
-      
+
         -->
     <div class="collapse navbar-collapse" id="navbar-collapse-1">
       <ul class="nav navbar-nav">
-       
+
         <li class="dropdown">
-          <a [routerLink]="['/home/project']" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a> 
+          <a [routerLink]="['/home/project']" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
           <ul class="dropdown-menu">
             <!-- <li class="kopie"><a href="#">Dropdown</a></li> -->
-            
+
             <li class="dropdown dropdown-submenu" *ngFor="let pl of projectlist">
               <a  [routerLink]="['/home/project', pl.PROJECT_ID ]" class="dropdown-toggle" data-toggle="dropdown">{{pl.PROJECT_NAME}}</a>
               <ul class="dropdown-menu">
@@ -26,17 +26,17 @@
                 <li><a [routerLink]="['/home/project', pl.PROJECT_ID+'_tm' ]">Team members</a></li>
                 <li><a [routerLink]="['/home/project', pl.PROJECT_ID+'_sd' ]">Scrum Details</a></li>
                 <li><a [routerLink]="['/home/project', pl.PROJECT_ID+'_doc' ]">Documents</a></li>
-               
+
               </ul>
             </li>
-           
+
           </ul>
         </li>
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employee <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
-	            <li class="kopie"><a href="#">List of Employess</a></li>
-	      
+	            <li class="kopie"><a [routerLink]="['/home/employee']">List of Employess</a></li>
+
 	            <li class="dropdown dropdown-submenu">
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown2 Link 4</a>
 	              <ul class="dropdown-menu">
@@ -47,20 +47,20 @@
 	            </li>
 	          </ul>
 	        </li>
-      
+
         <li class="dropdown">
 	          <a  [routerLink]="['/home/techno']" class="dropdown-toggle" data-toggle="dropdown">Technologies <b class="caret"></b></a>
 	          <ul class="dropdown-menu">
 	            <!-- <li class="kopie"><a href="#">List of Employess</a></li> -->
 	      <li *ngFor="let tl of technologylist">
 	      <a  [routerLink]="['/home/techno/', tl.TECHNOLOGY_ID ]">{{tl.TECHNOLOGY_NAME}}</a></li>
-	           
+
 	          </ul>
 	        </li>
         <li>
         <a><span style="margin-left: 300px;">Welcome, {{username.cell}}</span></a>
         </li>
-      
+
       </ul>
     </div>
     </nav>
@@ -68,4 +68,4 @@
       <router-outlet></router-outlet>
     </div>
 
-  <div class="footer well well-sm"><footer>&copy; 2017 Some copyright message</footer></div>  
+  <div class="footer well well-sm"><footer>&copy; 2017 Some copyright message</footer></div>

@@ -8,14 +8,15 @@ import { LoginComponent }  from './login/login.component';
 import { HomeModule } from './home/home.module';
 import { ProjectModule } from './project/project.module';
 import { TechnologyModule } from './technology/technology.module';
+import { EmployeeModule } from './employee/employee.module';
 import { routing } from './ app.routes';
 import { DataFilterPipe }   from './project/data-filter.pipe';
 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule , HttpModule, routing,HomeModule,ProjectModule,DataTableModule,TechnologyModule ],
+  imports:      [ BrowserModule, FormsModule , HttpModule, routing,HomeModule,ProjectModule,DataTableModule,TechnologyModule,EmployeeModule],
   declarations: [ AppComponent, LoginComponent,DataFilterPipe ],
   bootstrap:    [ AppComponent ],
- 
+
 })
 export class AppModule { }

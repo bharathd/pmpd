@@ -6,16 +6,20 @@ import {HomeComponent } from './home/home.component';
 import {ProjectComponent } from './project/project.component';
 import { TechnologyComponent }  from './technology/technology.component';
 import { EmployeeComponent }  from './employee/employee.component';
+import { AddProjectComponent }  from './project/addproject/newproject.component';
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
     
-   { path: 'home' , component: HomeComponent,
+   { path: 'home' , 
+   component: HomeComponent,
+   data: {cell: 'as'},
      children: [
      { path: '', component: ProjectComponent },
         { path: 'project', component: ProjectComponent },
         { path: 'techno', component: TechnologyComponent },
         { path: 'project/:id', component: ProjectComponent },
+        { path: 'addproject', component: AddProjectComponent },
         { path: 'techno/:id', component: TechnologyComponent },
         { path: 'employee', component: EmployeeComponent },
     ] }

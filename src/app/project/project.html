@@ -1,3 +1,5 @@
+
+<a routerLink="/home/addproject"><button class="btn btn-success pull-right" > Add Project</button></a><br><br>
 <table *ngIf="!childproject" class="table table-striped table-border" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="5">
     <thead>
     <tr>
@@ -24,7 +26,7 @@
         <td>{{i+1}}</td>
         <td>{{item.PROJECT_NAME}}</td>
         <td>{{item.PROJECT_DESCRIPTION}}</td>
-        <td >{{item.PROJECT_Duration}}</td>
+        <td>{{item.PROJECT_Duration}}</td>
         <td>{{item.PROJECT_TEAM_MEMBER}}</td>
     </tr>
      <tr  *ngIf="!projectinfo1">

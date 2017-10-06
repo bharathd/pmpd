@@ -12,6 +12,11 @@ h1 {
     background-color: darkslategrey;
  
 }
+.error{
+    margin-left: 171px;
+    width: 47%;
+    height:48px;
+}
 .footer{
 	   background-color: darkslategrey;
     color: bisque;

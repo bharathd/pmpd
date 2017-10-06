@@ -17,7 +17,11 @@ export class NewprojectService {
             .map(this.extractData)
             .catch(this.handleError);
     }
-
+ addprojectdetails(data:any){
+   return this.http.post('http://localhost:8000/addproject',{qid:data})
+            .map(this.extractData)
+            .catch(this.handleError);
+  }
     private extractData(res:Response) {
         let body = res.json();
       

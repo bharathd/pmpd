@@ -49,9 +49,11 @@ export class LoginComponent  {
         this.value = response;
     
         console.log(this.value);
-       this.username=this.value[0].username;
-        if(response.length>0)
+       
+        if(response.length>0){
+          this.username=this.value[0].username;
         this.router.navigate(['home',{cell:this.value[0].USER_NAME}]);
+        }
         else
           this.loading=true;
     }, (err) => { // <---

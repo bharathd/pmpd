@@ -86,11 +86,11 @@ myTexts: IMultiSelectTexts = {
   submitv(){
    this.projectservice.addprojectdetails(this.addproject).subscribe((response:any) => { // <---
         this.data = response;
-
+ this.router.navigate(['/home']);
     }, (err:any) => { // <---
         console.log(err);
     }
-  }
+  };
   getprojects() {
         this.projectservice.getProjectListdetails().subscribe((response:any) => { // <---
         this.data = response;

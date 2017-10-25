@@ -11,11 +11,11 @@ import {  Routes , Router, ActivatedRoute } from '@angular/router';
 })
 export class EmployeeComponent  {
     data: any;
-     private filteredData;
+      filteredData:any;
   technoinfo: any;
   technoinfo1:any;
-  public data:any;
-  technoqa:any
+  technoqa:any;
+  id:any;
   technologylist:any;
   constructor(private _routeParams:  ActivatedRoute,private employeeservice: EmployeeService,private router: Router
         ) {
@@ -55,7 +55,7 @@ this.filteredData = this.data;
      console.log(query);
      debugger;
      if(query) {
-       this.filteredData = _.filter(this.data, (a)=>a.EMPLOYEE_NAME.indexOf(query)>=0);
+     //this.filteredData = _.filter(this.data, (a)=>a.EMPLOYEE_NAME.indexOf(query)>=0);
      } else {
        this.filteredData = this.data;
      }
